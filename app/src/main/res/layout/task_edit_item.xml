@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_margin="2dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:text="name" />
+
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:text="desc" />
+
+            <EditText
+                android:id="@+id/edit_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:text="add" />
+
+            <Button
+                android:id="@+id/btn_reset"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:text="Reset" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_margin="2dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_weight="2"
+            android:layout_margin="2dp"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/edit_desc"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_update"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:text="update" />
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:text="delete" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

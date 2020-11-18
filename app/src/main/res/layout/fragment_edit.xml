@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_head"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxHeight="180dp"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintBottom_toTopOf="@id/includ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="TODO list:" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="name"
+                    android:hint="name" />
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="name"
+                    android:hint="description" />
+
+                <Button
+                    android:text="add/update"
+                    android:id="@+id/brn_insert"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <include
+        android:id="@+id/includ"
+        layout="@layout/task_edit_item"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/recycler"
+        app:layout_constraintTop_toBottomOf="@id/card_head" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintVertical_weight="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/includ" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
