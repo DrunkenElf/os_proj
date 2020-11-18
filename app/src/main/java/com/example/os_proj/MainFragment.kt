@@ -48,7 +48,7 @@ class MainFragment : Fragment() {
         }
 
 
-        binding.recycler.adapter = TreeViewAdapter(listOf(ChildBinder(), HeadBinder()))
+        binding.recycler.adapter = TreeViewAdapter(listOf(ChildBinder(sharedModel), HeadBinder()))
             .apply{
             setOnTreeNodeListener(object : TreeViewAdapter.OnTreeNodeListener {
                 override fun onClick(p0: TreeNode<*>?, p1: RecyclerView.ViewHolder?): Boolean {
@@ -76,7 +76,7 @@ class MainFragment : Fragment() {
 
         sharedModel.nodes.observe(viewLifecycleOwner, { updated ->
             Log.d("observe Main", "")
-            _binding?.recycler?.adapter = TreeViewAdapter(updated, listOf(ChildBinder(), HeadBinder())).also {
+            _binding?.recycler?.adapter = TreeViewAdapter(updated, listOf(ChildBinder(sharedModel), HeadBinder())).also {
                 it.notifyDataSetChanged()
             }
             _binding?.recycler?.adapter?.notifyDataSetChanged()

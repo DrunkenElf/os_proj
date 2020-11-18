@@ -4,16 +4,18 @@ import android.graphics.Color
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.navigation.Navigation
 import com.example.os_proj.database.Task
 import com.example.os_proj.database.TaskList
+import com.example.os_proj.viewModel.MainViewModel
 import tellh.com.recyclertreeview_lib.LayoutItemType
 import tellh.com.recyclertreeview_lib.TreeNode
 import tellh.com.recyclertreeview_lib.TreeViewBinder
 
 
-class ChildBinder : TreeViewBinder<ChildBinder.ViewHolder>() {
+class ChildBinder(val model: MainViewModel) : TreeViewBinder<ChildBinder.ViewHolder>() {
     override fun provideViewHolder(itemView: View): ViewHolder {
         return ViewHolder(itemView)
     }
@@ -23,6 +25,12 @@ class ChildBinder : TreeViewBinder<ChildBinder.ViewHolder>() {
 
         if (!child.task.isDone) holder.tv.setTextColor(Color.GRAY)
         else holder.tv.setTextColor(Color.BLACK)
+
+        holder.isAdded.isChecked = child.task.isDone
+        holder.isAdded.setOnClickListener {
+            model.update(child.task.copy(isDone = holder.isAdded.isChecked))
+        }
+
         holder.tv.text = child.task.name
     }
 
@@ -31,6 +39,7 @@ class ChildBinder : TreeViewBinder<ChildBinder.ViewHolder>() {
 
     inner class ViewHolder(rootview: View) : TreeViewBinder.ViewHolder(rootview) {
         val tv = rootview.findViewById<TextView>(R.id.title)
+        val isAdded = rootview.findViewById<CheckBox>(R.id.check)
     }
 }
 

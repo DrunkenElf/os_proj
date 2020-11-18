@@ -19,7 +19,7 @@ class MainViewModel @ViewModelInject constructor(
     private val repository: MainRepository,
     @Assisted private val savedState: SavedStateHandle, application: Application,
 ) : AndroidViewModel(application) {
-    private lateinit var listId: String
+     lateinit var listId: String
 
     private val _taskLists = MutableLiveData<List<TaskListWithTasks>>()
     val tasksList: LiveData<List<TaskListWithTasks>>
@@ -102,7 +102,7 @@ class MainViewModel @ViewModelInject constructor(
 
     fun update(task: Task) = CoroutineScope(Dispatchers.IO).launch {
         repository.taskDao.update(task)
-        openEdit()
+        fetchTaskLists()
     }
     fun delete(task: Task) = CoroutineScope(Dispatchers.IO).launch {
         repository.taskDao.delete(task)
